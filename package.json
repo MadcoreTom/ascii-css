@@ -1,0 +1,12 @@
+{
+  "name": "ascii-css",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass --no-source-map --style=compressed src:www"
+  },
+  "author": "MAdcoretom",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.68.0"
+  }
+}

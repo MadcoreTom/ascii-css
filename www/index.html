@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ascii-css</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #eee;
+        }
+
+        .centre-site {
+            width: 960px;
+            margin: auto;
+            min-height: 100vh;
+            border-left: 1px solid lightgrey;
+            border-right: 1px solid lightgrey;
+            padding: 10px;
+            background: white;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .preview {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .preview-code {
+            margin: 10px;
+            border-radius: 5px;
+            background: #eee;
+        }
+    </style>
+    <link rel="stylesheet" href="main.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="centre-site">
+        <h1>ASCII component Library</h1>
+        <h2>Getting Started</h2>
+        Anything within an <code>.ascii</code> class will be styled appropriately
+        <h2>Link</h2>
+        <p>External links (default) and internal links</p>
+        <div class="ascii preview">
+            <p>
+                Read about <a href="https://www.jetbrains.com/lp/mono/#ligatures">ligatures</a> in the JetBrains Mono
+                font.
+                <br>
+                Or read my article about <a href="cats-and-dogs.html" class="internal">Cats and Dogs</a> on my website.
+            </p>
+        </div>
+        <h2>Box</h2>
+        <p>This is useful for grouping things</p>
+        <div class="ascii preview">
+            <div class="box">
+                <p>Lorem Ipsum</p>
+            </div>
+        </div>
+        <p>Or with a title</p>
+        <div class="ascii preview">
+            <div class="box">
+                <span class="frame-title">My Frame</span>
+                <p>Lorem Ipsum</p>
+            </div>
+            <div class="box">
+                <span class="frame-title-yellow">Important</span>
+                <p>Lorem Ipsum</p>
+            </div>
+            <div class="box">
+                <span class="frame-title-red">Danger</span>
+                <p>Lorem Ipsum</p>
+            </div>
+        </div>
+        <h2>General Font Styling</h2>
+        <div class="ascii preview">
+            This is <strong>strong</strong> or <b>bold</b>
+            <br>
+            This is <i>italic</i>
+            <br>
+            <h1>This is a title</h1>
+            and
+            <br>
+            <h2>This is a lesser title</h2>
+        </div>
+        <h2>Buttons</h2>
+        <div class="ascii preview">
+            <button class="primary">Apply</button>
+            <button>Okay</button>
+            <button class="danger">Delete</button>
+        </div>
+        <h2>Horizontal Rule</h2>
+        <div class="ascii preview">
+            <p>Text</p>
+            <hr>
+            <p>More Text</p>
+            <div class="box">
+                <p>Lorem Ipsum</p>
+                <hr>
+                <p>Hello</p>
+            </div>
+        </div>
+        <h2>Complex Example</h2>
+        <div class="ascii preview">
+            <div style="display:flex">
+                <div style="flex-grow: 2">
+                    <h2>This Website</h2>
+                    <p>I've decided to go for a (at least for now) static website. S3, Cloudfront, and away I go.</p>
+
+                    <button>Website</button>
+                    <button>Typescript</button>
+                    <button>React</button><a href="#" class="internal">Read More</a>
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                    <h2>Game Graveyard</h2>
+                    <p>I have a short attention span when I'm making games. Often I'll get to the interesting game
+                        mechanic, or the unique idea of the game and thenmove onto something else without polishing it.
+                    </p>
+
+                    <button>Game</button>
+                    <button>Typescript</button>
+                    <button>Abandoned</button> <a href="#" class="internal">Read More</a>
+                </div>
+                <div style="flex-grow: 1">
+                    <div class="box">
+                        <span class="frame-title-yellow">Tags</span>
+
+                        <button>Game</button>
+                        <button>Typescript</button>
+                        <button>Abandoned</button>
+                        <button>React</button>
+                    </div>
+                    <div class="box">
+                        <span class="frame-title-red">Links</span>
+                        <a href="#">Tumblr</a><br>
+                        <a href="#">Twitter</a><br>
+                        <a href="#">Myspace</a><br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>

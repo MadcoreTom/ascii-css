@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
+
+$blue: royalblue;
+$red: orangered;
+$dark-red: #aa2200;
+$cyan: cyan;
+$black: #111;
+$white: #bbb;
+$bright-white: #fff;
+$teal: teal;
+
+$charw: 0.5em;
+$charh: 1em;
+
+@mixin text-link($colour, $char) {
+    text-decoration: none;
+    color: $colour;
+
+    &:after {
+        content: $char;
+        background: $colour;
+        color: $black;
+        margin-left: $charw;
+        padding: 0 $charw;
+    }
+
+    &:hover {
+        font-weight: bold;
+        background: $colour;
+        color: $black;
+    }
+}
+
+.ascii {
+    background: $black;
+    color: $white;
+    font-family: "JetBrains Mono", monospace;
+
+    a {
+        @include text-link($blue, "^");
+    }
+
+    a.internal {
+        @include text-link($cyan, ">");
+    }
+
+    .box {
+        background: $black;
+        border: 2px solid $white;
+        box-shadow: 0 0.25em 0 0.5em $black, 0 -0.25em 0 0.5em $black;
+        margin: $charh $charw;
+        padding: $charw;
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid $white;
+        margin: $charw 0;
+
+    }
+
+    p {
+        margin: 0;
+    }
+
+    strong,
+    b,
+    i {
+        color: $bright-white;
+    }
+
+    h1 {
+        background-color: $bright-white;
+        color: $black;
+        font-size: 100%;
+        margin: 0;
+
+        &:before {
+            content: '░';
+        }
+
+        &:after {
+            content: '░';
+            float: right;
+        }
+    }
+
+
+    h2 {
+        background-color: $white;
+        color: $black;
+        font-size: 100%;
+        margin: 0;
+
+        &:before {
+            content: '░';
+        }
+
+        &:after {
+            content: '░';
+            float: right;
+        }
+    }
+
+    button {
+        background: $white;
+        font-weight: bold;
+        font-size: 100%;
+        margin: 0 $charw;
+        padding: 0 $charw;
+        font-family: "JetBrains Mono", monospace;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background: $bright-white;
+        }
+
+        &.primary {
+            background: $cyan;
+            color: $teal;
+
+            &:hover {
+                background: $bright-white;
+            }
+        }
+
+        &.danger {
+            background: $dark-red;
+
+            &:hover {
+                background: $red;
+            }
+        }
+    }
+
+    @mixin frame-title($colour) {
+        background: $black;
+        color: $colour;
+        margin-top: -1.2em;
+        padding: 0 0.5em;
+        position: absolute;
+        display: inline-block;
+    }
+
+    span.frame-title-yellow {
+        @include frame-title(yellow);
+    }
+
+    span.frame-title {
+        @include frame-title($bright-white);
+    }
+
+    span.frame-title-red {
+        @include frame-title($red);
+    }
+}
