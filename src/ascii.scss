@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
 
-$blue: royalblue;
-$red: orangered;
-$dark-red: #aa2200;
-$cyan: cyan;
-$black: #111;
-$white: #bbb;
-$bright-white: #fff;
-$teal: teal;
+$black: #1E142D;
+$white:#C4BECE;
+$bright-white: #fff7f8;
+$dark-red: #ab1f65;
+$red: #ff4f69;
+$orange:#ff8142;
+$yellow:#ffda45;
+$green:#4ADB46;
+$cyan:#49e7ec;
+$blue: #3368dc;
 
 $charw: 0.5em;
 $charh: 1em;
@@ -118,7 +120,7 @@ $charh: 1em;
 
         &.primary {
             background: $cyan;
-            color: $teal;
+            color: $black;
 
             &:hover {
                 background: $bright-white;
