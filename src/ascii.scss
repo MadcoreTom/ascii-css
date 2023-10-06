@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
 
 $black: #1E142D;
-$white:#C4BECE;
+$white: #C4BECE;
 $bright-white: #fff7f8;
 $dark-red: #ab1f65;
 $red: #ff4f69;
-$orange:#ff8142;
-$yellow:#ffda45;
-$green:#4ADB46;
-$cyan:#49e7ec;
+$orange: #ff8142;
+$yellow: #ffda45;
+$green: #4ADB46;
+$cyan: #49e7ec;
 $blue: #3368dc;
 
 $charw: 0.5em;
@@ -33,17 +33,70 @@ $charh: 1em;
     }
 }
 
+@mixin triangle-right($colour) {
+    border-left: 0.7em solid $colour;
+    border-top: 0.7em solid transparent;
+    border-bottom: 0.7em solid transparent;
+    margin-bottom: -0.35em;
+    background: $black;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+@mixin triangle-left($colour) {
+    border-right: 0.7em solid $colour;
+    border-top: 0.7em solid transparent;
+    border-bottom: 0.7em solid transparent;
+    margin-bottom: -0.35em;
+    background: $black;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
 .ascii {
     background: $black;
     color: $white;
     font-family: "JetBrains Mono", monospace;
 
-    a {
+    a:not(.tag) {
         @include text-link($blue, "^");
     }
 
     a.internal {
         @include text-link($cyan, ">");
+    }
+
+    a.tag {
+        background: $yellow;
+        color: $black;
+
+        &:before {
+            content: '';
+            @include triangle-left($yellow);
+        }
+
+        &:after {
+            content: '';
+            @include triangle-right($yellow);
+        }
+
+        &:hover {
+            background: $bright-white;
+            color: $blue;
+
+            &:before {
+                @include triangle-left($bright-white);
+            }
+
+            &:after {
+                @include triangle-right($bright-white);
+            }
+
+        }
     }
 
     .box {
@@ -75,7 +128,7 @@ $charh: 1em;
         background-color: $bright-white;
         color: $black;
         font-size: 100%;
-        margin: 0;
+        margin: 1em 0;
 
         &:before {
             content: '░';
@@ -92,7 +145,7 @@ $charh: 1em;
         background-color: $white;
         color: $black;
         font-size: 100%;
-        margin: 0;
+        margin: 1em 0;
 
         &:before {
             content: '░';
@@ -103,6 +156,24 @@ $charh: 1em;
             float: right;
         }
     }
+
+    h3 {
+        background-color: #c4bece;
+        color: #1e142d;
+        font-size: 100%;
+        margin: 1em 0;
+
+        /* NEW */
+        &:before {
+            content: "░░░"
+        }
+
+        &:after {
+            content: "░░░";
+            float: right
+        }
+    }
+
 
     button {
         background: $white;
